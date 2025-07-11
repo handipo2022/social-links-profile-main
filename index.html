@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Social links profile</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: "Inter-Bold";
+        src: url("../social-links-profile-main/assets/fonts/static/Inter-Bold.ttf")
+          format("truetype");
+      }
+      @font-face {
+        font-family: "Inter-Regular";
+        src: url("../social-links-profile-main/assets/fonts/static/Inter-Regular.ttf")
+          format("truetype");
+      }
+      @font-face {
+        font-family: "Inter-SemiBold";
+        src: url("../social-links-profile-main/assets/fonts/static/Inter-SemiBold.ttf")
+          format("truetype");
+      }
+      @font-face {
+        font-family: "Inter-VariableFont";
+        src: url("../social-links-profile-main/assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+          format("truetype");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: hsl(0, 0%, 8%);
+      }
+      .main-container {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background-color: hsl(0, 0%, 12%);
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img {
+        border-radius: 50%;
+      }
+      .name {
+        font-family: "Inter-Regular";
+        font-weight: 600;
+        color: hsl(0, 0%, 100%);
+      }
+      .location {
+        font-family: "Inter-Regular";
+        font-weight: 600;
+        color: hsl(75, 94%, 57%);
+      }
+      .job {
+        font-family: "Inter-Regular";
+        font-weight: 600;
+        color: hsl(0, 0%, 65%);
+      }
+      .custom-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(0, 0%, 20%);
+        font-family: "Inter-Regular";
+        font-weight: 800;
+        color: white;
+      }
+      .custom-button:active {
+        color: black;
+        background-color: hsl(75, 94%, 57%);
+        cursor:pointer;
+      }
+      .attribution {
+        color: white;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @media screen and (max-width: 480px) {
+        .main-container {
+          width: 66.7vw; /*320px*/
+          /*border-radius: 4.167vw;*/ /*20px*/
+          border-top-left-radius: 4.167vw;
+          border-top-right-radius: 4.167vw;
+          border-bottom-left-radius: 4.167vw;
+          border-bottom-right-radius: 4.167vw;
+        }
+
+        img {
+          width: 18.75vw; /*90px*/
+          margin-top: 4.167vw; /*20px*/
+          margin-bottom: 4.167vw; /*20px*/
+        }
+        .name {
+          font-size: 5.83vw; /*28px*/
+          margin-top: 0.417vw; /*2px*/
+          margin-bottom: 0.417vw; /*2px*/
+        }
+        .location {
+          font-size: 3.333vw; /*16px*/
+          margin-top: 0.417vw; /*2px*/
+          margin-bottom: 0.417vw; /*2px*/
+        }
+        .job {
+          font-size: 3.333vw; /*16px*/
+          margin-top: 4.167vw; /*20px*/
+          margin-bottom: 4.167vw; /*20px*/
+        }
+        .custom-button {
+          font-size: 2.916vw; /*14px*/
+          margin-left: 2.08vw; /*10px*/
+          margin-right: 2.08vw; /*10px*/
+          margin-bottom: 2.08vw; /*10px*/
+          padding-top: 2.5vw; /*12px*/
+          padding-bottom: 2.5vw; /*12px*/
+          border-radius: 1.667vw; /*8px*/
+        }
+        .attribution {
+          font-size: 1.667vw; /*8px*/
+          margin-top: 6.25vw; /*30px*/
+        }
+      }
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        .main-container {
+          width: 41.7vw;
+          border-radius: 2.6vw; /*20px*/
+        }
+        img {
+          width: 11.72vw;
+          margin-top: 2.604vw;
+          margin-bottom: 2.604vw;
+        }
+        .name {
+          font-size: 3.65vw;
+          margin-top: 0.2604vw;
+          margin-bottom: 0.2604vw;
+        }
+        .location {
+          font-size: 2.083vw;
+          margin-top: 0.2604vw;
+          margin-bottom: 0.2604vw;
+        }
+        .job {
+          font-size: 2.083vw;
+          margin-top: 2.604vw;
+          margin-bottom: 2.604vw;
+        }
+        .custom-button {
+          font-size: 1.823vw;
+          margin-left: 1.302vw;
+          margin-right: 1.302vw;
+          margin-bottom: 1.302vw;
+          padding-top: 1.5625vw;
+          padding-bottom: 1.5625vw;
+          border-radius: 1.042vw;
+        }
+        .attribution {
+          font-size: 1.041vw; /*8px*/
+          margin-top: 3.9vw; /*30px*/
+        }
+      }
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .main-container {
+          width: 31.25vw;
+          border-radius: 1.953vw; /*20px*/
+        }
+        img {
+          width: 8.79vw;
+          margin-top: 1.953vw;
+          margin-bottom: 1.953vw;
+        }
+        .name {
+          font-size: 2.73vw;
+          margin-top: 0.1953vw;
+          margin-bottom: 0.1953vw;
+        }
+        .location {
+          font-size: 1.563vw;
+          margin-top: 0.1953vw;
+          margin-bottom: 0.1953vw;
+        }
+        .job {
+          font-size: 1.563vw;
+          margin-top: 1.953vw;
+          margin-bottom: 1.953vw;
+        }
+        .custom-button {
+          font-size: 1.367vw;
+          margin-left: 0.976vw;
+          margin-right: 0.976vw;
+          margin-bottom: 0.976vw;
+          padding-top: 1.172vw;
+          padding-bottom: 1.172vw;
+          border-radius: 0.781vw;
+        }
+        .attribution {
+          font-size: 0.78vw; /*8px*/
+          margin-top: 2.93vw; /*30px*/
+        }
+      }
+      @media screen and (min-width: 1025px) and (max-width: 1200px) {
+        .main-container {
+          width: 26.7vw;
+          border-radius: 1.67vw; /*20px*/
+        }
+        img {
+          width: 7.5vw;
+          margin-top: 1.667vw;
+          margin-bottom: 1.667vw;
+        }
+        .name {
+          font-size: 2.33vw;
+          margin-top: 0.1667vw;
+          margin-bottom: 0.1667vw;
+        }
+        .location {
+          font-size: 1.333vw;
+          margin-top: 0.1667vw;
+          margin-bottom: 0.1667vw;
+        }
+        .job {
+          font-size: 1.333vw;
+          margin-top: 1.667vw;
+          margin-bottom: 1.667vw;
+        }
+        .custom-button {
+          font-size: 1.167vw;
+          margin-left: 0.833vw;
+          margin-right: 0.833vw;
+          margin-bottom: 0.833vw;
+          padding-top: 1vw;
+          padding-bottom: 1vw;
+          border-radius: 0.667vw;
+        }
+        .attribution {
+          font-size: 0.667vw; /*8px*/
+          margin-top: 2.5vw; /*30px*/
+        }
+      }
+      @media screen and (min-width: 1201px) and (max-width: 1440px) {
+        .main-container {
+          width: 22.22vw;
+          border-radius: 1.389vw; /*20px*/
+        }
+
+        img {
+          width: 6.25vw;
+          margin-top: 1.389vw;
+          margin-bottom: 1.389vw;
+        }
+        .name {
+          font-size: 1.94vw;
+          margin-top: 0.1389vw;
+          margin-bottom: 0.1389vw;
+        }
+        .location {
+          font-size: 1.111vw;
+          margin-top: 0.1389vw;
+          margin-bottom: 0.1389vw;
+        }
+        .job {
+          font-size: 1.111vw;
+          margin-top: 1.389vw;
+          margin-bottom: 1.389vw;
+        }
+        .custom-button {
+          font-size: 0.972vw;
+          margin-left: 0.694vw;
+          margin-right: 0.694vw;
+          margin-bottom: 0.694vw;
+          padding-top: 0.833vw;
+          padding-bottom: 0.833vw;
+          border-radius: 0.556vw;
+        }
+        .attribution {
+          font-size: 0.555vw; /*8px*/
+          margin-top: 2.083vw; /*30px*/
+        }
+      }
+      @media screen and (min-width: 1441px) {
+        .main-container {
+          width: 16.6vw;
+          border-radius: 1.041vw; /*20px*/
+        }
+
+        img {
+          width: 4.6875vw;
+          margin-top: 1.042vw;
+          margin-bottom: 1.042vw;
+        }
+        .name {
+          font-size: 1.46vw;
+          margin-top: 0.1042vw;
+          margin-bottom: 0.1042vw;
+        }
+        .location {
+          font-size: 0.833vw;
+          margin-top: 0.1042vw;
+          margin-bottom: 0.1042vw;
+        }
+        .job {
+          font-size: 0.833vw;
+          margin-top: 1.042vw;
+          margin-bottom: 1.042vw;
+        }
+        .custom-button {
+          font-size: 0.729vw;
+          margin-left: 0.52vw;
+          margin-right: 0.52vw;
+          margin-bottom: 0.52vw;
+          padding-top: 0.625vw;
+          padding-bottom: 0.625vw;
+          border-radius: 0.417vw;
+        }
+        .attribution {
+          font-size: 0.417vw; /*8px*/
+          margin-top: 1.5625vw; /*30px*/
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <img
+          src="../social-links-profile-main/assets/images/avatar-jessica.jpeg"
+        />
+      </div>
+      <div class="container">
+        <label class="name">Jessica Randall</label>
+      </div>
+      <div class="container">
+        <label class="location">London, United Kingdom</label>
+      </div>
+      <div class="container">
+        <label class="job"> "Front-end developer and avid reader." </label>
+      </div>
+      <div class="custom-button">GitHub</div>
+      <div class="custom-button">Frontend Mentor</div>
+      <div class="custom-button">LinkedIn</div>
+      <div class="custom-button">Twitter</div>
+      <div class="custom-button">Instagram</div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Zhou Han Bao</a>.
+      </div>
+    </div>
+  </body>
+</html>
